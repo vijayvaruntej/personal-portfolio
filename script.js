@@ -48,9 +48,29 @@ ScrollReveal({
 
 /*-----------------------TYPED JS -----------------------*/
 const typed = new Typed('.multiple-text', {
-    strings: ['Java Developer', 'Web Developer', 'Frontend Developer'],
+    strings: ['B.Tech Graduate','Java Developer', 'Professional Video Editor', 'Frontend Developer'],
     typeSpeed: 70,
     backSpeed: 70,
     backDelay:1000,
     loop: true,
 });
+
+/*-----------------------CONTACT -----------------------*/
+
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from submitting normally
+  
+    // Get form field values
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const subject = document.getElementById('subject').value;
+    const phone = document.getElementById('phone').value;
+    const message = document.getElementById('message').value;
+  
+    // Construct the mailto link
+    const mailtoLink = `mailto:youremail@example.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\nPhone: ' + phone + '\n\nMessage: ' + message)}`;
+  
+    // Open the mailto link
+    window.location.href = mailtoLink;
+  });
+  
